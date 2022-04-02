@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {PrimeNumberInstance} from '../src/modificacion';
+import {PrimeNumberInstance} from '../src/modificacion2803';
 
 describe('Ejercicio 1 - Tests', () => {
   it('La función getNumberOfItems() funciona correctamente', () => {
@@ -15,7 +15,7 @@ describe('Ejercicio 1 - Tests', () => {
     // expect(PrimeNumberInstance.getPrimeNumberInstance().getNumberOfItems()).to.be.equal(0);
   });
 
-  it('La ', () => {
+  it('Se puede acceder a la clase', () => {
     expect(PrimeNumberInstance.getPrimeNumberInstance().getNumberOfItems()).to.be.equal(0);
   });
 });

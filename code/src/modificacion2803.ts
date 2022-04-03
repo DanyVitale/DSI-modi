@@ -1,162 +1,163 @@
 
-// /**
-//  * Tipo item PrimeNumberItem
-//  */
-// type PrimeNumberItem = {
-//     n: number;
-// }
+/**
+ * Tipo item PrimeNumberItem
+ */
+type PrimeNumberItem = {
+    n: number;
+}
 
 
-// /**
+/**
 //  * Clase PrimeNumberInstance -  implementa el patrón de diseño Singleton.
 //  */
 
-// // Falta implements Iterable<PrimeNumberItem>
-// export class PrimeNumberInstance {
-//   private items: PrimeNumberItem[];
+// Falta implements Iterable<PrimeNumberItem>
+export class PrimeNumberInstance {
+  private items: PrimeNumberItem[];
 
-//   private static primeNumberInstance: PrimeNumberInstance;
+  private static primeNumberInstance: PrimeNumberInstance;
 
-//   private constructor() {
-//     this.items = [];
-//   }
+  private constructor() {
+    this.items = [];
+  }
 
-//   public static getPrimeNumberInstance(): PrimeNumberInstance {
-//     if (!PrimeNumberInstance.primeNumberInstance) {
-//       PrimeNumberInstance.primeNumberInstance = new PrimeNumberInstance();
-//     }
-//     return PrimeNumberInstance.primeNumberInstance;
-//   }
+  public static getPrimeNumberInstance(): PrimeNumberInstance {
+    if (!PrimeNumberInstance.primeNumberInstance) {
+      PrimeNumberInstance.primeNumberInstance = new PrimeNumberInstance();
+    }
+    return PrimeNumberInstance.primeNumberInstance;
+  }
 
-//   [Symbol.iterator](): Iterator<PrimeNumberItem> {
-//     return this.items.values();
-//   }
+  [Symbol.iterator](): Iterator<PrimeNumberItem> {
+    return this.items.values();
+  }
 
-//   /**
-//    * Añadir elementos
-//    * @param item
-//    */
-//   addItem(item: PrimeNumberItem): void {
-//     PrimeNumberInstance.primeNumberInstance.items.push(item);
-//   }
+  /**
+   * Añadir elementos
+   * @param item
+   */
+  addItem(item: PrimeNumberItem): void {
+    PrimeNumberInstance.primeNumberInstance.items.push(item);
+  }
 
-//   //   getItems(): PrimeNumberItem[] {
-//   //     return PrimeNumberInstance.primeNumberInstance.items;
-//   //   }
+  getItems(): PrimeNumberItem[] {
+    return PrimeNumberInstance.primeNumberInstance.items;
+  }
 
-//   /**
-//    * Permite establecer los elemntos
-//    * @param items
-//    */
-//   setItems(items: PrimeNumberItem[]) {
-//     PrimeNumberInstance.primeNumberInstance.items = items;
-//   }
+  /**
+   * Permite establecer los elemntos
+   * @param items
+   */
+  setItems(items: PrimeNumberItem[]) {
+    PrimeNumberInstance.primeNumberInstance.items = items;
+  }
 
-//   /**
-//    * Obtener el numero de elementos
-//    * @returns
-//    */
-//   getNumberOfItems(): number {
-//     return PrimeNumberInstance.primeNumberInstance.items.length;
-//   }
+  /**
+   * Obtener el numero de elementos
+   * @returns
+   */
+  getNumberOfItems(): number {
+    return PrimeNumberInstance.primeNumberInstance.items.length;
+  }
 
-//   /**
-//    * Obtener un elemento en concreto
-//    * @param index
-//    * @returns
-//    */
-//   getItem(index: number): PrimeNumberItem | undefined {
-//     if (index >= PrimeNumberInstance.primeNumberInstance.getNumberOfItems()) {
-//       return undefined;
-//     }
-//     return PrimeNumberInstance.primeNumberInstance.items[index];
-//   }
+  /**
+   * Obtener un elemento en concreto
+   * @param index
+   * @returns
+   */
+  getItem(index: number): PrimeNumberItem | undefined {
+    if (index >= PrimeNumberInstance.primeNumberInstance.getNumberOfItems()) {
+      return undefined;
+    }
+    return PrimeNumberInstance.primeNumberInstance.items[index];
+  }
 
-//   /**
-//    * Obtener los valores items
-//    * @param n
-//    * @returns
-//    */
-//   getPrimeNumber(n: number): IterableIterator<number> {
-//     const temp: number[] = [];
-//     let count: number = 0;
-//     let i: number = 1;
+  /**
+   * Obtener los valores items
+   * @param n
+   * @returns
+   */
+  getPrimeNumber(n: number): IterableIterator<number> {
+    const temp: number[] = [];
+    let count: number = 0;
+    let i: number = 1;
 
-//     while (count != n) {
-//       if (this.isPrime(i)) {
-//         temp.push(i);
-//         i++;
-//         count++;
-//       } else {
-//         i++;
-//       }
-//     }
-//     return temp.values();
-//   }
+    while (count != n) {
+      if (this.isPrime(i)) {
+        temp.push(i);
+        i++;
+        count++;
+      } else {
+        i++;
+      }
+    }
+    return temp.values();
+  }
 
-//   /**
-//    * Establecer si en un rango de numero los numeros son primos o no
-//    * @param m
-//    * @param num
-//    * @returns
-//    */
-//   isPrimeRange(m: number, num: number): boolean {
-//     let temp: number = m;
-//     while (temp < num) {
-//       for (let i = 2; i < num; i++) {
-//         if (temp % i === 0) {
-//           return false;
-//         } else {
-//           return true;
-//         }
-//       }
-//       temp++;
-//     }
-//   }
+  /**
+   * Establecer si en un rango de numero los numeros son primos o no
+   * @param m
+   * @param num
+   * @returns
+   */
+  isPrimeRange(m: number, num: number): boolean {
+    let temp: number = m;
+    while (temp < num) {
+      for (let i = 2; i < num; i++) {
+        if (temp % i === 0) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+      temp++;
+    }
 
-//   /**
-//    * Establecer si un numero es primo
-//    * @param num
-//    * @returns
-//    */
-//   isPrime(num: number): boolean {
-//     let flag: boolean = false;
-//     for (let i = 2; i < num; i++) {
-//       if (num % i === 0) {
-//         flag = false;
-//       } else {
-//         flag = true;
-//       }
-//     }
+    return true;
+  }
 
-//     if (flag) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
+  /**
+   * Establecer si un numero es primo
+   * @param num
+   * @returns
+   */
+  isPrime(num: number): boolean {
+    let flag: boolean = false;
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        flag = false;
+      } else {
+        flag = true;
+      }
+    }
 
-//   /**
-//    * Obtener los numeros primos en un rango
-//    * @param m
-//    * @param n
-//    * @returns
-//    */
-//   getPrimeRange(m: number, n: number): IterableIterator<number> {
-//     const temp: number[] = [];
-//     let count: number = 0;
-//     let i: number = 1;
+    if (flag) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-//     // if (m > n) return undefined;
-//     while (count != n) {
-//       if (this.isPrimeRange(m, n)) {
-//         temp.push(i);
-//         i++;
-//         count++;
-//       } else {
-//         i++;
-//       }
-//     }
-//     return temp.values();
-//   }
-// }
+  /**
+   * Obtener los numeros primos en un rango
+   * @param m
+   * @param n
+   * @returns
+   */
+  getPrimeRange(m: number, n: number): IterableIterator<number> {
+    const temp: number[] = [];
+    let count: number = 0;
+    let i: number = 1;
+
+    while (count != n) {
+      if (this.isPrimeRange(m, n)) {
+        temp.push(i);
+        i++;
+        count++;
+      } else {
+        i++;
+      }
+    }
+    return temp.values();
+  }
+}

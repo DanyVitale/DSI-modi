@@ -2,11 +2,11 @@
   "name": "code",
   "version": "1.0.0",
   "description": "",
-  "main": "types.js",
+  "main": "ind.js",
   "scripts": {
     "test": "mocha",
     "doc": "typedoc",
-    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/types.js\"",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
   },
   "keywords": [],
@@ -28,7 +28,6 @@
 
   },
   "dependencies": {
-    "ignore": "^5.2.0",
     "typedoc": "^0.22.13"
   }
 }

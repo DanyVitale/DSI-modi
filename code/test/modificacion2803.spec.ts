@@ -4,7 +4,6 @@ import {PrimeNumberInstance} from '../src/modificacion2803';
 
 describe('Ejercicio 1 - Tests', () => {
   it('La función getNumberOfItems() funciona correctamente', () => {
-    //PrimeNumberInstance.getPrimeNumberInstance().addItem([2, 3, 1]);
     expect(PrimeNumberInstance.getPrimeNumberInstance().getNumberOfItems()).to.be.equal(0);
   });
 

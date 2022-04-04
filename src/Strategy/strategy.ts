@@ -2,5 +2,5 @@
  * Interface for strategy pattern
  */
 export interface Strategy {
-    execute(data: number[]): void;
+    execute(data: number[]): number[];
 }

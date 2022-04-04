@@ -1,4 +1,4 @@
-import { Strategy } from "../Strategy/strategy";
+import {Strategy} from '../Strategy/strategy';
 
 /**
  * Class Solver describes the context in which the strategy is used.

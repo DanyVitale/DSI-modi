@@ -1,4 +1,4 @@
-import {Strategy} from "../Strategy/strategy";
+import {Strategy} from '../Strategy/strategy';
 
 /**
  * BubbleSort implements the strategy pattern.

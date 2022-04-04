@@ -9,8 +9,12 @@ describe('Solver - Tests', () => {
   const mySolver = new Solver([1, 2, 3], new BubbleSort());
   const mySolver2 = new Solver([4, 5, 6], new MergeSort());
 
-  it('getStrategy works', () => {
+  it('getStrategy works for mysolver', () => {
     expect(mySolver.getStrategy()).to.be.eql(new BubbleSort());
+  });
+
+  it('getStrategy works for mysolver2', () => {
+    expect(mySolver2.getStrategy()).to.be.eql(new MergeSort());
   });
 
   it('setStrategy works', () => {
@@ -27,7 +31,11 @@ describe('Solver - Tests', () => {
   //     expect(mySolver.logic()).to.be.eqls([1, 2, 3]);
   //   });
 
-  it('getDataworks', () => {
+  it('getData works for mysolver', () => {
     expect(mySolver.getData()).to.be.eql([1, 2, 3]);
+  });
+
+  it('getData works for mysolver2', () => {
+    expect(mySolver2.getData()).to.be.eql([4, 5, 6]);
   });
 });

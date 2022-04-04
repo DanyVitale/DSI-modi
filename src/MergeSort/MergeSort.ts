@@ -8,7 +8,7 @@ export class MergeSort implements Strategy {
    * @param data Number[]
    */
   execute(data: number[]) {
-    return this.divide(data);
+    return this.mergeSort(data);
     console.log(`Merge sort applied to ${data}`);
   }
 
@@ -17,24 +17,24 @@ export class MergeSort implements Strategy {
    * @param data Number[]
    * @returns Number[]
    */
-  divide(data: number[]): number[] {
+  mergeSort(data: number[]): number[] {
     const halfLength = Math.ceil(data.length / 2);
     let low = data.slice(0, halfLength);
     let high = data.slice(halfLength);
 
     if (halfLength > 1) {
-      low = this.divide(low);
-      high = this.divide(high);
+      low = this.mergeSort(low);
+      high = this.mergeSort(high);
     }
 
-    return this.combine(low, high);
+    return this.divide(low, high);
   }
 
   /**
    * SortedSort describes ordenate algorithm
    * @returns Number[]
    */
-  combine(low: number[], high: number[]): number[] {
+  divide(low: number[], high: number[]): number[] {
     let indexLow = 0;
     let indexHigh = 0;
     const lengthLow = low.length;
